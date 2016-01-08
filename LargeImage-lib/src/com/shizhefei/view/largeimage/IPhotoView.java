@@ -16,53 +16,56 @@ import java.io.InputStream;
 
 public interface IPhotoView {
 
-	public void setScale(float scale, float offsetX, float offsetY);
+    public void setScale(float scale, float offsetX, float offsetY);
 
-	public void setImage(String filePath);
+    public void setImage(String filePath);
 
-	public void setImage(InputStream inputStream);
+    public void setImage(InputStream inputStream);
 
-	public int getImageWidth();
+    public int getImageWidth();
 
-	public int getImageHeight();
+    public int getImageHeight();
 
-	public Scale getScale();
+    public Scale getScale();
 
-	public static class Scale {
-		volatile float scale;
-		volatile int fromX;
-		volatile int fromY;
+    public static class Scale {
 
-		public Scale(float scale, int fromX, int fromY) {
-			super();
-			this.scale = scale;
-			this.fromX = fromX;
-			this.fromY = fromY;
-		}
+        volatile float scale;
 
-		public float getScale() {
-			return scale;
-		}
+        volatile int fromX;
 
-		void setScale(float scale) {
-			this.scale = scale;
-		}
+        volatile int fromY;
 
-		public int getFromX() {
-			return fromX;
-		}
+        public Scale(float scale, int fromX, int fromY) {
+            super();
+            this.scale = scale;
+            this.fromX = fromX;
+            this.fromY = fromY;
+        }
 
-		void setFromX(int fromX) {
-			this.fromX = fromX;
-		}
+        public float getScale() {
+            return scale;
+        }
 
-		public int getFromY() {
-			return fromY;
-		}
+        void setScale(float scale) {
+            this.scale = scale;
+        }
 
-		void setFromY(int fromY) {
-			this.fromY = fromY;
-		}
-	}
+        public int getFromX() {
+            return fromX;
+        }
+
+        void setFromX(int fromX) {
+            this.fromX = fromX;
+        }
+
+        public int getFromY() {
+            return fromY;
+        }
+
+        void setFromY(int fromY) {
+            this.fromY = fromY;
+        }
+    }
 
 }
